@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Wikipedia Dump</title>
+</head>
+<body>
+    <h2>Download Wikipedia Dump</h2>
+    <p>Click the button below to download the latest Wikipedia dump file.</p>
+    <button id="downloadBtn">Download File</button>
+    
+    <script>
+        document.getElementById("downloadBtn").addEventListener("click", function() {
+            const fileUrl = "https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2";
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = "enwiki-latest-pages-articles.xml.bz2";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
